@@ -1,0 +1,7 @@
+
+    <div>
+        <button class="btn btn-light" type="button" (click)="onSendMoney()" style="margin: 1rem">Send Money</button>
+    </div>
+    <div  *ngFor="let transaction of transactionList">
+        <app-transaction-item [transaction]="transaction"></app-transaction-item>
+    </div>

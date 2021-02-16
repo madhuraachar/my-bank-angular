@@ -1,0 +1,22 @@
+<form #loginForm="ngForm" (submit)="onLogin(loginForm)">
+    <div>
+        <img src="./../../../assets/img/profile.png" alt="">
+    </div>
+    <mat-form-field>
+        <mat-label>Email</mat-label>
+        <input matInput type="email" email name="email" ngModel #email="ngModel" required>
+        <mat-error *ngIf="email.invalid">invalid email.</mat-error>
+    </mat-form-field>
+    <mat-form-field >
+        <mat-label>Password</mat-label>
+        <input matInput type="password" name="password" ngModel #password="ngModel" required>
+        <mat-error *ngIf="password.invalid">invalid password.</mat-error>
+    </mat-form-field>
+    <div *ngIf="! isLoading">
+        <p>If you don't have account click here to<a routerLink="/auth/signup"> signup</a> </p>
+    </div>
+    <div>
+        <button class="btn-gradient" type="submit" *ngIf="! isLoading">Login</button>
+        <mat-spinner *ngIf="isLoading"></mat-spinner>
+    </div>
+</form>

@@ -1,0 +1,86 @@
+<section id="section-c">
+    <mat-grid-list cols="4" rowHeight="120px" [gutterSize]="'5px'">
+      <mat-grid-tile [colspan]="4" [rowspan]="2" [style.background]="'#fff'">
+          <div id="balance">
+            <div class="name">
+                <h2>Hello, Madhura</h2>
+                <p class="lead-small">Let's get you set up to send, spend, get paid back and more.</p>
+            </div>
+            <div class="balance-mobile">
+                <div class="balance-mobile-icon">
+                    <mat-icon>mobile_friendly</mat-icon>
+                </div>
+                <div>
+                    <h2>Make money mobile</h2>
+                    <p class="lead-small">Set up your mobile to send and receive money.</p>
+                    <p class="lead-small bright">Confirm your mobile number <mat-icon>keyboard_arrow_right</mat-icon> </p>
+                </div>
+            </div>
+          </div>
+      </mat-grid-tile>
+      <mat-grid-tile [colspan]="3" [rowspan]="2" >
+        <div class="available-balance">
+            <div class="available-balance-amount">
+                <h2 class="primaryDark">Available Balance</h2>
+                <button mat-icon-button [matMenuTriggerFor]="menu" >
+                    <mat-icon>more_vert</mat-icon>
+                </button>
+            </div>
+            <h3 class="main-amount-medium">{{availableBalance | currency: 'INR'}}</h3>
+        </div>
+      </mat-grid-tile>
+      <mat-grid-tile [colspan]="2" [rowspan]="3">
+          <div class="balance-icon">   
+              <div class="balance-icon-list">
+                  <div class="icon">
+                      <button mat-fab color="primary" (click)="sendOrRequestMoney()"><mat-icon>call_made</mat-icon></button>
+                      <p>Send</p>
+                  </div>
+                  <div class="icon">
+                      <button mat-fab color="primary" (click)="sendOrRequestMoney()"><mat-icon>call_received</mat-icon></button>
+                      <p>Request</p>
+                  </div>
+                  <div class="icon">
+                      <button mat-fab color="primary" [matMenuTriggerFor]="menu"><mat-icon>more_horiz</mat-icon></button>
+                      <p>More</p>
+                  </div>
+              </div>
+              <h2>Send Again</h2>
+              <div class="balance-icon-list">
+                  
+                  <div class="icon" (click)="onSendAgain()" *ngIf="oneTrasactionName">
+                      <button mat-fab color="primary">
+                          <mat-icon>account_circle</mat-icon>
+                      </button>
+                      <p>{{ oneTrasactionName }}</p>
+                  </div>
+                  <div class="icon">
+                      <button mat-fab color="primary" (click)="sendOrRequestMoney()">
+                          <mat-icon>add</mat-icon>
+                      </button>
+                      <p>New</p>
+                  </div>
+              </div>
+          </div>
+      </mat-grid-tile>
+    </mat-grid-list>
+</section>
+
+<mat-menu #menu="matMenu">
+    <button mat-menu-item (click)="onAllTransaction()">
+        <mat-icon>swap_horizontal_circle</mat-icon>
+        <span>All Transactions</span>
+    </button>
+    <button mat-menu-item (click)="sendOrRequestMoney()">
+        <mat-icon>send</mat-icon>
+        <span>Send Money</span>
+    </button>
+    <button mat-menu-item (click)="onAccountHome()">
+        <mat-icon>account_circle</mat-icon>
+        <span>Account Details</span>
+    </button>
+    <button mat-menu-item (click)="onAddBalance()">
+        <mat-icon>add_to_photos</mat-icon>
+        <span>Add Money</span>
+    </button>
+</mat-menu>

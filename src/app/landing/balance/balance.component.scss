@@ -1,0 +1,23 @@
+mat-grid-list {
+    margin: 2rem;
+}
+
+
+
+
+.balance-icon {
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    &-list {
+        display: flex;
+        text-align: center;
+        .icon {
+            margin: 0 2rem;
+        }
+    }
+    h2 {
+        margin: 2rem;
+    }
+}

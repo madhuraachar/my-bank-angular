@@ -1,0 +1,11 @@
+<section id="section-contact">
+    <div class="banner">
+        <h1>Get in touch</h1>
+        <p>We'd love to hear from you. Here's how you can reach us...</p>
+    </div>
+    <div class="contact-list">
+        <div *ngFor="let contact of contactTypes">
+            <app-contact-type [contact]="contact"></app-contact-type>
+        </div>
+    </div>
+</section>

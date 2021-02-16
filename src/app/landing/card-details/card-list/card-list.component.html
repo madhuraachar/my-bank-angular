@@ -1,0 +1,6 @@
+<div class="peronal-card">
+    <div *ngFor="let card of cardList | async; let i = index" class="card">
+        <!-- <app-debit-credit-card [card]="card"></app-debit-credit-card> -->
+        <app-card [card]="card"></app-card>
+    </div>
+</div>

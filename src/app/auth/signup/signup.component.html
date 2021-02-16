@@ -1,0 +1,26 @@
+<form #signupForm="ngForm" (submit)="onSignup(signupForm)">
+    <div>
+        <img src="./../../../assets/img/profile.png" alt="">
+    </div>
+    <mat-form-field>
+        <mat-label>Name</mat-label>
+        <input matInput type="text" ngModel name="name" #name="ngModel" required>
+        <mat-error *ngIf="name.invalid">invalid name.</mat-error>
+    </mat-form-field>
+    <mat-form-field>
+        <mat-label>Email</mat-label>
+        <input matInput type="email" ngModel email name="email" #email="ngModel" required>
+        <mat-error *ngIf="email.invalid">invalid email.</mat-error>
+    </mat-form-field>
+    <mat-form-field>
+        <mat-label>Password</mat-label>
+        <input matInput type="password" name="password" ngModel #password="ngModel" required>
+    </mat-form-field>
+    <div *ngIf="! isLoading">
+        <p>If you have account click here to<a routerLink="/auth"> login</a> </p>
+    </div>
+    <div>
+        <button class="btn-gradient" type="submit" *ngIf="! isLoading">Signup</button>
+        <mat-spinner *ngIf="isLoading"></mat-spinner>
+    </div>
+</form>

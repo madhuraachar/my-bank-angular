@@ -1,0 +1,15 @@
+.transaction {
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    box-shadow: 1px 2px 1px #ccc;
+    border-radius: 5px;
+    margin: 0.5rem;
+    img {
+        border-radius: 50%;
+    }
+    
+}
+.active {
+        background: rgb(139 143 142 / 10%);
+}

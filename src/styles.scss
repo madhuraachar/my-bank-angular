@@ -1,1 +1,378 @@
-/* You can add global styles to this file, and also import other style files */
+@import 'variables';
+@import 'utility';
+@import 'grid';
+
+html, body {
+    height: 100%;
+}
+
+h1, h2, h3, h4, h5, h6, p{
+    padding: 0;
+    margin: 0;
+}
+
+//side navidation
+mat-drawer-container {
+    height: 100%;
+}
+.mat-drawer.mat-drawer-side {
+    background-color: $primaryColor;
+    border: none;
+    width: 100px;
+}
+.mat-list-base {
+    padding-top: 0 !important;
+}
+.mat-list-base .mat-list-item, .mat-list-base .mat-list-option {
+    height: 100% !important;
+    text-align: center;
+}
+.mat-list-text {
+    padding-right: 0 !important; 
+}
+.mat-list-base {
+    height: 100%;
+    display: flex !important;
+    flex-direction: column;
+    justify-content: space-around;
+}
+
+
+
+
+//navigation
+#navigation {
+    background: $lightColor;
+    height: 3rem;
+    box-shadow: 0px 2px 2px #ccc;
+    .navigation{
+        display: flex;
+        height: 100%;
+        width: 100%;
+        align-items: center;
+        &-search {
+            width: 85%;
+            input {
+                display: block;
+                width: 100%;
+                height: 100%;
+                padding-left: 1rem;
+                border: none;
+            }
+        }
+        &-icons {
+            width: 15%;
+            margin-left: 1rem;
+            ul {
+                margin: 0;
+                display: flex;
+                li {
+                    cursor: pointer;
+                    display: inline;
+                    padding: 0 0.75rem;
+                    img {
+                        width: 25px;
+                        border-radius: 50%;
+                    }
+                }
+            }
+        }
+    
+    }
+}
+
+#section {
+    display: flex;
+    padding: 1rem;
+    margin-left: 1rem;
+    &-a {
+        width: 30%;
+        .name {
+            h2 {
+                color: $primaryColor;
+                font-size: 1.5rem;
+                margin: 0;
+                padding: 0;
+            }
+        }
+        .message {
+            margin: 2rem 0 2rem 0;
+            background-image: linear-gradient(to right, #222f97, #1fa7e6);
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 1rem;
+            color: $lightColor;
+        }
+        .balance-details {
+            background-image: linear-gradient(to right, #0f87c7, #10D4E5);
+            padding: 1rem;
+            color: #fff;
+            div {
+                text-align: right;
+            }
+        }
+
+    }
+    &-b {
+        width: 65%;
+        padding-left: 2rem;
+        .grid-container{
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            grid-gap: 1rem;
+            .money {
+                &-graph {
+                    background: $lightColor;
+                    grid-column: 1 / span 3;
+                    padding: 1rem;
+                    height: 15rem;
+                   
+                }
+                &-pending {
+                    background: $lightColor;
+                    padding: 1rem;
+                    position: relative;
+                    p {
+                        color: $primaryDark;
+                        margin: 0;
+                    }
+                    &-amount {
+                        margin: 1rem 0;
+                        .main-amount {
+                            color: $primaryColor;
+                        }
+                    }
+                    .text-right {
+                        position: absolute;
+                        bottom: 0;
+                        right: 0;
+                        padding: 2rem;
+                    }
+                }
+                &-savings-graph {
+                    background: $lightColor;
+                    grid-column: 2/ span 2;
+                    padding: 1rem;
+                     p {
+                        color: $primaryDark;
+                    }
+                }
+                &-recent-transactions {
+                    padding: 1rem;
+                    background: $lightColor;
+                    grid-column: 1 / span 2;
+                    p {
+                        color: $primaryDark;
+                    }
+                    table {
+                        width: 100%;
+                        padding: 1rem 0;
+                        img {
+                            border-radius: 50%;
+                        }
+                    }
+                }
+                &-saved-accounts {
+                    background: $lightColor;
+                    color: $primaryDark;
+                    padding: 1rem;
+                    p {
+                        margin: 0;
+                    }
+                    .cust {
+                        display: flex;
+                        justify-content: space-between;
+                        align-items: center;
+                        padding: 0.25rem;
+                        box-shadow: 1px 2px 3px #ccc;
+                        cursor: pointer;
+                        img {
+                            border-radius: 50%;
+                        }
+                    }
+                    button {
+                        margin: 1rem 0;
+                    }
+                }
+            }
+        }
+    }
+    // balance 
+    &-c {
+        #balance {
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 2rem;
+        
+    .name {
+        width: 40%;
+    }
+    .balance-mobile {
+        display: flex;
+        align-items: center;
+        justify-content: space-around;
+        width: 60%;
+        background-color: $primaryDark;
+        color: $lightColor;
+        padding: 2rem;
+        border-radius: 5px;
+        &-icon {
+            padding-right: 5rem;
+            mat-icon {
+                font-size: 5rem;
+            }
+        }
+        .bright {
+            color: $lightColor;
+            position: relative;
+            mat-icon {
+                position: absolute;
+                font-size: 2rem;
+                bottom: 1px;
+            }
+        }
+    }
+        }
+        .available-balance {
+            background-color: #fff;
+            width: 100%;
+            margin: 2rem auto;
+            padding: 2rem;
+            font-size: 1.2rem;
+            line-height: 4;
+            // .main-amount {
+            //     color: red;
+            // }
+            &-amount {
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+            }
+        }
+    }
+    //card details
+    &-card-list {
+    position: relative;
+    
+     .peronal-card {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        position: absolute;
+        top: 80%;
+        width: 70%;
+        left: 15%;
+        grid-gap: 1.5rem;
+    .card {
+        margin: 2rem;
+        width: 100%;
+    }
+}
+    }
+    //alert
+    &-alert {
+    width: 80%;
+    margin: 1rem auto;
+    .alert{
+    display: flex;
+    align-items: center;
+    background-color: #f4f4f4;
+    padding: 1rem;
+    
+    &-icon {
+        margin-right: 1rem;
+        mat-icon{
+            font-size: 3rem;
+            color: red;
+        } 
+    }
+    &-details {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        &-icon {
+            display: flex;
+            mat-icon {
+                font-size: 1rem;
+            }
+        }
+    }
+}
+    }
+
+    //contact
+    &-contact {
+    position: relative;
+    line-height: 1;
+    .contact-list {
+        display: flex;
+        justify-content: space-evenly;
+        position: absolute;
+        top: 50%;
+        width: 100%;
+        .contact {
+            width: 100%;
+            background-color: #fff;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            margin: 2rem;
+            padding: 2rem;
+            line-height: 2;
+            mat-icon {
+                font-size: 2rem;
+                color: $primaryDark;
+                margin: 1rem;
+            }
+            .lead-small {
+                font-size: 1rem;
+            }
+        }
+    }   
+    }
+
+    //logi and signup
+    &-login {
+        form {
+    display: flex;
+    flex-direction: column;
+    img {
+        width: 100px;
+        display: block;
+        margin: auto;
+        border-radius: 50%;
+    }
+    }
+    }
+    &-payment-success {
+    width: 70%;
+    margin: auto;
+    .payment-header {
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+        color: #fff;
+    }
+    }
+}
+//trasaction
+#transaction {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    margin: 2rem;
+    .transaction-list {
+        background-color: #fff;
+        border-radius: 5px;
+        margin-right:1rem;
+        padding: 1rem;
+    }
+    .transaction-form {
+        background-color: #fff;
+        border-radius: 5px;
+    }
+}
+
+@import 'mobile'

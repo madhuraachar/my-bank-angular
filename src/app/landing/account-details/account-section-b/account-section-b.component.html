@@ -1,0 +1,23 @@
+
+<div class="grid-container">
+    <div class="money-graph">
+        <app-chart [chartType]="'line-chart'"></app-chart>
+    </div>
+    <div class="money-pending">
+        <app-pending-transaction></app-pending-transaction>
+    </div>
+    <div class="money-savings-graph">
+        <p>Savings</p>
+        <app-chart [chartType]="'pi-chart'"></app-chart>
+    </div>
+    <div class="money-recent-transactions">
+        <app-recent-transaction></app-recent-transaction>
+    </div>
+    <div class="money-saved-accounts">
+        <app-saved-account></app-saved-account>
+    </div>
+</div>
+
+
+
+

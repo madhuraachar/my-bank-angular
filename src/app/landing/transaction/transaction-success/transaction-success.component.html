@@ -1,0 +1,39 @@
+<section id="section-payment-success">
+    <div class="payment-header" [ngClass]="{'success': transactionDetails.status, 'failed': ! transactionDetails.status}">
+        <div>
+            <mat-icon>check_circle</mat-icon>
+        </div>
+        <h4>{{ transactionDetails.name}}</h4>
+        <h5>{{ transactionDetails._id }}</h5>
+    </div>
+    <mat-list>
+        <mat-list-item>
+            <div class="divider">
+                <p>Amount</p>
+                <p>{{ transactionDetails.amount | currency: 'INR' }}</p>
+            </div>
+        </mat-list-item>
+        <mat-divider></mat-divider>
+        <mat-list-item>
+            <div class="divider">
+                <p>Date</p>
+                <p>{{ transactionDetails.date | date}} </p>
+            </div>
+        </mat-list-item>
+        <mat-divider></mat-divider>
+        <mat-list-item>
+            <div class="divider">
+                <p>Account Number</p>
+                <p>{{ transactionDetails.accountNo | truncate:10}}</p>
+            </div>
+        </mat-list-item>
+        <mat-divider></mat-divider>
+        <mat-list-item>
+            <div class="divider">
+                <p>Transaction Type</p>
+                <p> {{transactionDetails.transactionType}}</p>
+            </div>
+        </mat-list-item>
+        <mat-divider></mat-divider>
+    </mat-list>
+</section>

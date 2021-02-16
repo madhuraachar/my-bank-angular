@@ -1,0 +1,9 @@
+<ng-container [ngSwitch]="chartType">
+    <div *ngSwitchCase="'pi-chart'">
+        <app-pi-chart></app-pi-chart>
+    </div>
+    <ng-container *ngSwitchCase="'line-chart'">
+        <app-line-chart></app-line-chart>
+    </ng-container>
+</ng-container>
+

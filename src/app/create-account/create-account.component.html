@@ -1,0 +1,19 @@
+<section id="create-account">
+    <h2 mat-dialog-title>{{ getPageName() }}</h2>
+    <mat-dialog-content>
+        <ng-container *ngIf="accountType === 'UPDATE_ACCOUNT' || accountType === 'CREATE_ACCOUNT'">
+            <app-account #appAccount></app-account>
+        </ng-container>
+        <ng-container *ngIf="accountType === 'CREATE_CARD' || accountType === 'UPDATE_CARD'">
+            <app-create-card #appCreate [cardCreateType] = 'accountType'></app-create-card>
+        </ng-container>
+    </mat-dialog-content>
+    <mat-dialog-actions align="end">
+        <div class="mr-r">
+            <button class="btn-gradient" (click) = "onCreate()" >Create</button>
+        </div>
+        <div>
+            <button class="btn-danger-gradient" (click) = "closeTheDialog()" *ngIf="accountType !== 'CREATE_ACCOUNT'">Close</button>
+        </div>
+    </mat-dialog-actions>
+</section>

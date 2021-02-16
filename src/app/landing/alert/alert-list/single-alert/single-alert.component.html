@@ -1,0 +1,13 @@
+<div class="alert" [ngStyle]='{"borderRight": isRead()}'>
+    
+    <div class="alert-details">
+        <h3>{{alert.alertName}}</h3>
+        <div class="alert-details-icon">
+            <mat-icon>calendar_today</mat-icon>
+            <p>Posted {{alert.time}}</p>
+        </div>
+    </div>
+    <div class="alert-icon">
+        <mat-icon>notification_important</mat-icon>
+    </div>
+</div>

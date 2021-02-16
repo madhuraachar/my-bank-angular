@@ -1,0 +1,9 @@
+<ng-container *ngIf="dataSource.length > 0">
+    <div>
+        <p>Recent Transactions</p>
+    </div>
+    <app-transaction-table [tableContent] = "dataSource"></app-transaction-table>
+    <div class="text-right">
+        <button class="btn-gradient" type="button" (click)="onAllTransaction()">View All</button>
+    </div>
+</ng-container>

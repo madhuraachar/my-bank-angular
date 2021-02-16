@@ -1,0 +1,17 @@
+<mat-drawer-container>
+    <mat-drawer mode="side"  #drawer>
+        <!-- opened -->
+        <app-sidenav (onSideNavSelect) = "drawer.toggle()"></app-sidenav>
+    </mat-drawer>
+    <mat-drawer-content>
+        <section id="navigation">
+        <mat-toolbar>
+            <button mat-icon-button (click)="drawer.toggle()">
+                <mat-icon>menu</mat-icon>
+            </button>
+            <app-search-bar></app-search-bar>
+        </mat-toolbar> 
+        </section>
+            <router-outlet></router-outlet>
+    </mat-drawer-content>
+</mat-drawer-container>

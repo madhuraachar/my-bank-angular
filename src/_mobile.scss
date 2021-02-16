@@ -1,0 +1,93 @@
+@media only screen and (max-width: 600px) {
+    .mat-drawer.mat-drawer-side {
+        background-color: $primaryColor;
+        width: 100vw;
+    }
+    mat-grid-tile {
+        width: 100% !important;
+    }
+    .hide-mobile {
+        display: none;
+    }
+    #navigation {
+        .navigation {
+            &-icons {
+               ul {
+                display: flex;
+                margin: 0; 
+               } 
+            }
+            &-search {
+                width: 60%;
+            }
+        }
+    }
+    #section {
+        flex-direction: column;
+        margin-left: 0rem;
+        &-a {
+            width: 100%;
+            
+        }
+        &-b {
+            width: 100%;
+            padding-left: 0;
+            overflow: hidden;
+            .grid-container {
+                display: flex;
+                flex-direction: column;
+            }
+        }
+        &-c {
+            #balance {
+                padding: 0;
+                border-radius: 5px;
+                .name {
+                    display: none;
+                }
+                .balance-mobile {
+                    width: 100%;
+                    padding: none;
+                }
+            }
+        }
+        &-contact {
+            width: 90%;
+            margin: auto;
+            .contact-list {
+                top:100%;
+                flex-direction: column;
+                .contact {
+                    margin: 0;
+                    flex-direction: column;
+                }
+            }
+        }
+        &-card-list {
+            .peronal-card {
+                top: 100%;
+                grid-template-columns: 1fr;
+                padding: 0.5rem;
+                width: 100%;
+                left: 0;
+                .card {
+                    margin: 0;
+                }
+            }
+        }
+        &-payment-success {
+            width: 100%;
+        }
+    }
+    #transaction {
+    grid-template-columns: 1fr;
+    margin: 2rem;
+    .transaction-list {
+        margin-right:0;
+    }
+    .transaction-form {
+        background-color: #fff;
+        border-radius: 5px;
+    }
+    }
+}

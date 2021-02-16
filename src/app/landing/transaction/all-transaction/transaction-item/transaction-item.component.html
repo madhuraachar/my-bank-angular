@@ -1,0 +1,9 @@
+<div class="transaction" style="cursor: pointer;" [routerLink] = "[transaction._id, 'edit']" routerLinkActive="active">
+    <div>
+        <img src="./../../../../assets/img/profile.png" alt="" width="30px">
+    </div>
+    <h3 class="lead-small">{{transaction.name}}</h3>
+    <p class="lead-small hide-mobile">{{transaction.accountNo |uppercase | truncate: 10}}</p>
+    <p class="lead-small">{{transaction.amount | number}}</p>
+    <div class="mean-dark" [ngStyle]="{'background-color': transaction.status ? 'green' : 'red'}"></div>
+</div>

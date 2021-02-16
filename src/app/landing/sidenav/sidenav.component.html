@@ -1,0 +1,8 @@
+<mat-nav-list>
+    <mat-list-item *ngFor="let item of navigationItems" (click)="onSelectOption()" [routerLink]="item.icon === 'home' ? ['/home'] : ['/', item.icon, item.id]" routerLinkActive="active">
+        <div class="icon">
+            <mat-icon [inline]="true">{{item.icon}}</mat-icon>
+            <p>{{item.title}}</p>
+        </div>
+    </mat-list-item>
+</mat-nav-list>

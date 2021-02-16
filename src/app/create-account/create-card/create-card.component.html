@@ -1,0 +1,18 @@
+<form #cardForm = "ngForm">
+    <mat-form-field *ngIf="cardCreateType === 'CREATE_CARD'">
+        <mat-label>Card Name</mat-label>
+        <mat-select name="cardName" ngModel required>
+            <mat-option *ngFor="let cardName of cardNames" value="{{ cardName }}">{{ cardName }}</mat-option>
+        </mat-select>
+    </mat-form-field>
+    <mat-form-field *ngIf="cardCreateType === 'CREATE_CARD'">
+        <mat-label>Card Type</mat-label>
+        <mat-select name="type" required ngModel required>
+            <mat-option *ngFor="let cardType of cardTypes" value="{{ cardType }}">{{ cardType }}</mat-option>
+        </mat-select>
+    </mat-form-field>
+    <mat-form-field>
+        <mat-label>{{ cardCreateType === 'CREATE_CARD' ? 'Card Limit' : 'Amount'}}</mat-label>
+        <input type="number" matInput name="inCardAmount" ngModel required>
+    </mat-form-field>
+</form>

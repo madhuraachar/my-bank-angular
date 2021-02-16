@@ -1,0 +1,164 @@
+* {
+    padding: 0;
+    margin: 0;
+    outline: none !important;
+}
+
+
+.lead-small {
+    font-size: 0.75rem;
+    color: #85adad;
+}
+
+%btn {
+    display: inline-block;
+    border: none;
+    text-decoration: none;
+    padding: 0.5rem 1rem;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: 0.5s ease;
+    &:hover {
+        transform: scale(1.1);
+    }
+}
+
+.btn {
+    &-light {
+        @extend %btn;
+        background: $lightMedium;
+        color: $primaryDark;
+        box-shadow: 1px 1px 3px #000;
+    }
+    &-dark {
+        @extend %btn;
+        border-radius: 5px;
+        color: $lightColor;
+        background: $primaryDark;
+    }
+    &-gradient {
+        @extend %btn;
+        background-image: linear-gradient(to right, #222f97, #1fa7e6);
+        color: $lightColor;
+    }
+    &-danger-gradient {
+        @extend %btn;
+        background-image: linear-gradient(to right, #ef0a0a, #f3818b);
+        color: #fbf7f7;
+    }
+}
+
+.main-amount {
+    &-light{
+        color: $lightColor;
+        font-size: 2.5rem !important;
+    }
+    &-dark{
+        color: $primaryDark;
+        font-size: 2.5rem !important;
+    }
+    &-medium {
+        color: $primaryColor;
+        font-size: 2.5rem !important;
+    }
+}
+.text-right {
+    text-align: right;
+}
+
+%mean {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+}
+.mean {
+    &-dark {
+        @extend %mean;
+        background-color: $primaryDark;
+    }
+    &-light {
+        @extend %mean;
+        background-color: #c5cae9;
+    }
+    &-red {
+        @extend %mean;
+        background-color: red;
+    }
+}
+
+
+        .card {
+            
+            background: $lightColor;
+            padding: 1rem;
+            margin: 2rem 0 2rem 0;
+            &-details {
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                
+                p {
+                    margin: 0;
+                }
+                &-type {
+                    color: $primaryDark;
+                    font-size: 1.2rem;
+
+                }
+            }
+            &-balance {
+                p {
+                    color: $primaryDark;
+                    margin: 1rem 0;
+                }
+            }
+            &-meaning {
+                
+                &-first {
+                    display: flex;
+                    align-items: center;
+                    p {
+                        margin: 0;
+                        padding: 0;
+                        margin-left: 0.25rem;
+                        font-size: 0.75rem;
+                    }
+                    
+                }
+                &-second {
+                    display: flex;
+                    align-items: center;
+                    p {
+                        margin: 0;
+                        padding: 0;
+                        margin-left: 0.25rem;
+                        font-size: 0.75rem;
+                    }
+                   
+                }
+                
+            }
+            .pay-now {
+                text-align: right;
+            }
+}
+
+.banner {
+        display: flex;
+        flex-direction: column;
+        height: 40vh;
+        background-color: $primaryDark;
+        color: $lightColor;
+        text-align: center;
+        justify-content: center;
+        position: relative;
+}
+
+a {
+    text-decoration: none;
+    color: $primaryDark;
+}
+
+.mr-r {
+    margin-right: 1rem;
+}

@@ -1,0 +1,16 @@
+
+    <div class="name">
+        <h2>Hello, {{ name }}</h2>
+        <p class="lead-small">Welcome to MyBank</p>
+    </div>
+    <app-message></app-message>
+    <div class="balance-details">
+        <p class="primary-text">Available Balance</p>
+        <h3 class="main-amount-light">{{availableBalance | currency: 'INR'}}</h3>
+        <div>
+            <button class="btn-light" type="button" (click)="onViewBalance()">View Balance</button>
+        </div>
+    </div>
+    <div class="card" *ngIf="card">
+        <app-card [card]="card"></app-card>
+    </div>

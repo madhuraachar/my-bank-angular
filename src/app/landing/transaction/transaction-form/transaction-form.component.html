@@ -1,0 +1,43 @@
+<form [formGroup]="transactionForm" (submit)="onSubmit()" *ngIf="! loader">
+    <h2>{{sendMode ? 'Send' : 'Re-Send'}} Money</h2>
+    <mat-form-field>
+        <mat-label>Name</mat-label>
+        <input type="text" matInput formControlName="name">
+        <mat-error *ngIf="transactionForm.get('name').invalid">* required</mat-error>
+    </mat-form-field>
+    <mat-form-field>
+        <mat-label>Account Number</mat-label>
+        <input type="text" matInput formControlName="accountNo">
+        <mat-error *ngIf="transactionForm.get('accountNo').invalid">* invalid account number</mat-error>
+    </mat-form-field>
+    <mat-form-field>
+        <mat-label>Bank Name</mat-label>
+        <input type="text" matInput formControlName="bankName">
+        <mat-error *ngIf="transactionForm.get('bankName').invalid">* invalid bank name</mat-error>
+    </mat-form-field>
+    <mat-form-field hidden>
+        <mat-label>Date of Transaction</mat-label>
+        <input matInput [matDatepicker]="picker" formControlName="date">
+        <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+        <mat-datepicker #picker></mat-datepicker>
+        <mat-error *ngIf="transactionForm.get('date').invalid">* invalid date</mat-error>
+    </mat-form-field>
+    <mat-form-field>
+        <mat-label>Amount</mat-label>
+        <input type="number" matInput formControlName="amount">
+        <mat-error *ngIf="transactionForm.get('amount').invalid">* required</mat-error>
+    </mat-form-field>
+    <mat-form-field>
+        <mat-label>Type Of Transfer</mat-label>
+        <mat-select name="type" formControlName="transactionType">
+            <mat-option value="NEFT">NEFT</mat-option>
+        </mat-select>
+        <mat-error *ngIf="transactionForm.get('transactionType').invalid">* required</mat-error>
+    </mat-form-field>
+    <div>
+        <button class="btn-dark" type="submit">
+           <mat-icon>{{sendMode ? 'send' : 'autorenew'}}</mat-icon>
+        </button>
+    </div>
+</form>
+<mat-spinner *ngIf="loader"></mat-spinner>
